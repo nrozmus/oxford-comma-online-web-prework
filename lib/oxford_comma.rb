@@ -1,19 +1,18 @@
-array = ["fiddleheads","okra","kohlrabi"]
 def oxford_comma(array)
- end 
-  if array.count == 1
-    return array[0]
-  elsif array.count == 2
-    return array[0] + " and " + array[1]
-  elsif array.count >= 3
-    newArray = []
-    i = 0
-    while i < array.count - 1
-      element = array[i]
-      newArray.push(element + ",")
-      i += 1
-    end
-    newArray << "and " + array.last
-    return newArray.join(" ")
+  array.join(",")
+  if array.size == 0
+    "Nothing to join."
+  elsif array.size == 1
+    array[0].to_s
+  elsif array.size == 2
+    array.join(" and ")
+  elsif array.size == 3
+    last = array.pop
+    array.join(", ").to_s << (", and #{last}")
+  else
+    last = array.pop
+    array.join(", ").to_s << (", and #{last}")
+  
   end
-end
+ end 
+ end
