@@ -1,10 +1,9 @@
 def oxford_comma(array)
- end 
-  if array.length == 1
-    return ["kiwi"].join
+   if array.length == 1
+    array.join
   elsif array.length == 2
-    return ["kiwi", "durian"].join(" and ")
+    array.join(" and ")
   else
-    array[0...-1].join(", ") <<", and #{array[-1]}"
+    last_element = array.pop
+    array.join(", ") << ", and " + last_element
   end
-end
