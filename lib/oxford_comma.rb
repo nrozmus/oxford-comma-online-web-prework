@@ -1,12 +1,12 @@
 def oxford_comma(array)
  end 
-  if array.size == 0 || array.size == 1
+  if array.length == 1
     array.join
-  elsif array.size == 2
-    array[array.size - 1] = " and "+array[array.size - 1]
-    array.join
-  else
-    array[array.size - 1] = "and "+array[array.size - 1]
-    array.join(", ")
+  elsif array.length == 2
+    array.join (" and ")
+  else array.length > 2
+    last = array.slice!(-1)
+    sentence = array.join(", ")
+    sentence.to_s + ", and " + last.to_s
   end
 end
